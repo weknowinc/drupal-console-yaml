@@ -1,0 +1,45 @@
+{
+  "name": "drupal/console-yaml",
+  "description": "Drupal Console Yaml",
+  "keywords": ["Drupal", "Console", "Development", "Symfony", "Yaml"],
+  "homepage": "http://drupalconsole.com/",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name":      "Jesus Manuel Olivas",
+      "email":     "jesus.olivas@gmail.com",
+      "homepage":  "http://jmolivas.com"
+    },
+    {
+      "name":      "Eduardo Garcia",
+      "email":     "enzo@enzolutions.com",
+      "homepage":  "http://enzolutions.com/"
+    },
+    {
+      "name":      "Drupal Console Yaml Contributors",
+      "homepage":  "https://github.com/hechoendrupal/drupal-console-yaml/graphs/contributors"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/hechoendrupal/drupal-console-yaml/issues",
+    "forum": "https://gitter.im/hechoendrupal/DrupalConsole",
+    "docs": "https://hechoendrupal.gitbooks.io/drupal-console/"
+  },
+  "require": {
+    "php": "^5.5.9 || ^7.0",
+    "dflydev/dot-access-configuration": "1.*",
+    "symfony/console": "~2.8",
+    "symfony/dependency-injection": "~2.8",
+    "symfony/config": "~2.8",
+    "symfony/filesystem": "~2.8",
+    "symfony/finder": "~2.8",
+    "symfony/process": "~2.8",
+    "symfony/translation": "~2.8",
+    "symfony/yaml": "~2.8",
+    "symfony/event-dispatcher": "~2.8",
+  },
+  "autoload": {
+    "psr-4": {"Drupal\\Console\\Component\\Yaml\\": "src"}
+  }
+}
