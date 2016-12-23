@@ -28,3 +28,7 @@ autoload.local.php
 # Drupal
 /core
 /nbproject/
+
+# Splitsh
+/config/
+/PATCHES.txt
