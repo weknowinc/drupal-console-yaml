@@ -37,7 +37,7 @@
     "symfony/process": "~2.8",
     "symfony/translation": "~2.8",
     "symfony/yaml": "~2.8",
-    "symfony/event-dispatcher": "~2.8",
+    "symfony/event-dispatcher": "~2.8"
   },
   "autoload": {
     "psr-4": {"Drupal\\Console\\Component\\Yaml\\": "src"}
