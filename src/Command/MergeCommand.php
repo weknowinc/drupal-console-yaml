@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Console\Command\Yaml\MergeCommand.
+ * Contains \Drupal\Console\Component\Yaml\Command\MergeCommand.
  */
 
-namespace Drupal\Console\Component\Yaml\Command\Yaml;
+namespace Drupal\Console\Component\Yaml\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,8 +13,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Command\Shared\CommandTrait;
-use Drupal\Console\Style\DrupalStyle;
+use Drupal\Console\Core\Command\Shared\CommandTrait;
+use Drupal\Console\Core\Style\DrupalStyle;
 
 class MergeCommand extends Command
 {
@@ -23,7 +23,7 @@ class MergeCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('yaml:merge')
+            ->setName('console:yaml:merge')
             ->setDescription($this->trans('commands.yaml.merge.description'))
             ->addArgument(
                 'yaml-destination',

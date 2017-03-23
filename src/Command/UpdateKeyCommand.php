@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Console\Command\Yaml\UnsetKeyCommand.
+ * Contains \Drupal\Console\Component\Yaml\Command\UpdateKeyCommand.
  */
 
-namespace Drupal\Console\Component\Yaml\Command\Yaml;
+namespace Drupal\Console\Component\Yaml\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,23 +13,23 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Command\Shared\CommandTrait;
-use Drupal\Console\Style\DrupalStyle;
-use Drupal\Console\Utils\NestedArray;
+use Drupal\Console\Core\Command\Shared\CommandTrait;
+use Drupal\Console\Core\Style\DrupalStyle;
+use Drupal\Console\Core\Utils\NestedArray;
 
-class UnsetKeyCommand extends Command
+class UpdateKeyCommand extends Command
 {
     use CommandTrait;
 
     /**
-   * @var NestedArray
-   */
+     * @var NestedArray
+     */
     protected $nestedArray;
 
     /**
-   * RebuildCommand constructor.
-   * @param NestedArray $nestedArray
-   */
+     * UpdateKeyCommand constructor.
+     * @param NestedArray $nestedArray
+     */
     public function __construct(NestedArray $nestedArray)
     {
         $this->nestedArray = $nestedArray;
@@ -39,17 +39,22 @@ class UnsetKeyCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('yaml:unset:key')
-            ->setDescription($this->trans('commands.yaml.unset.key.description'))
+            ->setName('console:yaml:update:key')
+            ->setDescription($this->trans('commands.yaml.update.key.description'))
             ->addArgument(
                 'yaml-file',
                 InputArgument::REQUIRED,
-                $this->trans('commands.yaml.unset.value.arguments.yaml-file')
+                $this->trans('commands.yaml.update.value.arguments.yaml-file')
             )
             ->addArgument(
                 'yaml-key',
                 InputArgument::REQUIRED,
-                $this->trans('commands.yaml.unset.value.arguments.yaml-key')
+                $this->trans('commands.yaml.update.value.arguments.yaml-key')
+            )
+            ->addArgument(
+                'yaml-new-key',
+                InputArgument::REQUIRED,
+                $this->trans('commands.yaml.update.value.arguments.yaml-new-key')
             );
     }
 
@@ -62,6 +67,7 @@ class UnsetKeyCommand extends Command
 
         $yaml_file = $input->getArgument('yaml-file');
         $yaml_key = $input->getArgument('yaml-key');
+        $yaml_new_key = $input->getArgument('yaml-new-key');
 
         try {
             $yaml_parsed = $yaml->parse(file_get_contents($yaml_file));
@@ -81,7 +87,7 @@ class UnsetKeyCommand extends Command
         }
 
         $parents = explode(".", $yaml_key);
-        $this->nestedArray->unsetValue($yaml_parsed, $parents);
+        $this->nestedArray->replaceKey($yaml_parsed, $parents, $yaml_new_key);
 
         try {
             $yaml = $dumper->dump($yaml_parsed, 10);
@@ -101,7 +107,7 @@ class UnsetKeyCommand extends Command
 
         $io->info(
             sprintf(
-                $this->trans('commands.yaml.unset.value.messages.unset'),
+                $this->trans('commands.yaml.update.value.messages.updated'),
                 $yaml_file
             )
         );

@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Console\Command\Yaml\DiffCommand.
+ * Contains \Drupal\Console\Component\Yaml\Command\DiffCommand.
  */
 
-namespace Drupal\Console\Component\Yaml\Command\Yaml;
+namespace Drupal\Console\Component\Yaml\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -13,9 +13,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Command\Shared\CommandTrait;
-use Drupal\Console\Style\DrupalStyle;
-use Drupal\Console\Utils\NestedArray;
+use Drupal\Console\Core\Command\Shared\CommandTrait;
+use Drupal\Console\Core\Style\DrupalStyle;
+use Drupal\Console\Core\Utils\NestedArray;
 
 class DiffCommand extends Command
 {
@@ -27,7 +27,7 @@ class DiffCommand extends Command
     protected $nestedArray;
 
     /**
-     * RebuildCommand constructor.
+     * DiffCommand constructor.
      * @param NestedArray $nestedArray
      */
     public function __construct(NestedArray $nestedArray)
@@ -39,7 +39,7 @@ class DiffCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('yaml:diff')
+            ->setName('console:yaml:diff')
             ->setDescription($this->trans('commands.yaml.diff.description'))
             ->addArgument(
                 'yaml-left',
@@ -128,8 +128,6 @@ class DiffCommand extends Command
         }
 
         $statistics = ['total' => 0, 'equal'=> 0 , 'diff' => 0];
-        /*        print_r($yamlLeftParsed);
-        print_r($yamlRightParsed);*/
         $diff = $this->nestedArray->arrayDiff($yamlLeftParsed, $yamlRightParsed, $negate, $statistics);
         print_r($diff);
 
@@ -208,7 +206,7 @@ class DiffCommand extends Command
         $yaml_left = $input->getArgument('yaml-left');
         if (!$yaml_left) {
             while (true) {
-                $yaml_left = $output->ask(
+                $yaml_left = $io->ask(
                     $this->trans('commands.yaml.diff.questions.yaml-left'),
                     null,
                     $validator_filename
@@ -226,7 +224,7 @@ class DiffCommand extends Command
         $yaml_right = $input->getArgument('yaml-right');
         if (!$yaml_right) {
             while (true) {
-                $yaml_right = $output->ask(
+                $yaml_right = $io->ask(
                     $this->trans('commands.yaml.diff.questions.yaml-right'),
                     null,
                     $validator_filename

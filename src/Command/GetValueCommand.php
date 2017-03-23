@@ -2,19 +2,19 @@
 
 /**
  * @file
- * Contains \Drupal\Console\Command\Yaml\GetValueCommand.
+ * Contains \Drupal\Console\Component\Yaml\Command\GetValueCommand.
  */
 
-namespace Drupal\Console\Component\Yaml\Command\Yaml;
+namespace Drupal\Console\Component\Yaml\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Command\Shared\CommandTrait;
-use Drupal\Console\Style\DrupalStyle;
-use Drupal\Console\Utils\NestedArray;
+use Drupal\Console\Core\Command\Shared\CommandTrait;
+use Drupal\Console\Core\Style\DrupalStyle;
+use Drupal\Console\Core\Utils\NestedArray;
 
 class GetValueCommand extends Command
 {
@@ -26,7 +26,7 @@ class GetValueCommand extends Command
     protected $nestedArray;
 
     /**
-     * RebuildCommand constructor.
+     * GetValueCommand constructor.
      * @param NestedArray $nestedArray
      */
     public function __construct(NestedArray $nestedArray)
@@ -38,7 +38,7 @@ class GetValueCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('yaml:get:value')
+            ->setName('console:yaml:get:value')
             ->setDescription($this->trans('commands.yaml.get.value.description'))
             ->addArgument(
                 'yaml-file',
@@ -90,7 +90,7 @@ class GetValueCommand extends Command
                 );
             }
 
-            $output->writeln($yaml_value);
+            $io->writeln($yaml_value);
         }
     }
 }
