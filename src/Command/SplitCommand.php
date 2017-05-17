@@ -29,6 +29,7 @@ class SplitCommand extends Command
 
     /**
      * SplitCommand constructor.
+     *
      * @param NestedArray $nestedArray
      */
     public function __construct(NestedArray $nestedArray)

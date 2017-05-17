@@ -28,6 +28,7 @@ class DiffCommand extends Command
 
     /**
      * DiffCommand constructor.
+     *
      * @param NestedArray $nestedArray
      */
     public function __construct(NestedArray $nestedArray)
