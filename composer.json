@@ -3,7 +3,7 @@
   "description": "Drupal Console Yaml",
   "keywords": ["Drupal", "Console", "Development", "Symfony", "Yaml"],
   "homepage": "http://drupalconsole.com/",
-  "type": "project",
+  "type": "drupal-console-library",
   "license": "GPL-2.0+",
   "authors": [
     {
