@@ -26,19 +26,7 @@
     "forum": "https://gitter.im/hechoendrupal/DrupalConsole",
     "docs": "https://hechoendrupal.gitbooks.io/drupal-console/"
   },
-  "require": {
-    "php": "^5.5.9 || ^7.0",
-    "dflydev/dot-access-configuration": "1.*",
-    "symfony/console": "~2.8",
-    "symfony/dependency-injection": "~2.8",
-    "symfony/config": "~2.8",
-    "symfony/filesystem": "~2.8",
-    "symfony/finder": "~2.8",
-    "symfony/process": "~2.8",
-    "symfony/translation": "~2.8",
-    "symfony/yaml": "~2.8",
-    "symfony/event-dispatcher": "~2.8"
-  },
+  "require": {},
   "autoload": {
     "psr-4": {"Drupal\\Console\\Component\\Yaml": "src"}
   }
