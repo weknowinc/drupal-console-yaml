@@ -12,3 +12,19 @@ Drupal Console Yaml, this project contains YAML console commands shared across p
 * yaml:update:key       Replace a YAML key in a YAML file.
 * yaml:update:value     Update a value for a specific key in a YAML file.
 ```
+
+### Install on a site:
+```
+cd /path/to/drupal/
+
+composer require drupal/console-yaml
+```
+
+### Install globally:
+```
+cd cd ~/.console/extend/
+
+composer require drupal/console-yaml
+
+```
+* For more information about adding commands globally [Drupal Console Extend](https://github.com/hechoendrupal/drupal-console-extend#drupal-console-extend)

@@ -38,7 +38,7 @@ class GetValueCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:get:value')
+            ->setName('yaml:get:value')
             ->setDescription($this->trans('commands.yaml.get.value.description'))
             ->addArgument(
                 'yaml-file',

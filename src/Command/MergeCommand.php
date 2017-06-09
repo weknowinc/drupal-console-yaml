@@ -23,7 +23,7 @@ class MergeCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:merge')
+            ->setName('yaml:merge')
             ->setDescription($this->trans('commands.yaml.merge.description'))
             ->addArgument(
                 'yaml-destination',

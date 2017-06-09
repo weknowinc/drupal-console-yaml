@@ -39,7 +39,7 @@ class UpdateValueCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:update:value')
+            ->setName('yaml:update:value')
             ->setDescription($this->trans('commands.yaml.update.value.description'))
             ->addArgument(
                 'yaml-file',
