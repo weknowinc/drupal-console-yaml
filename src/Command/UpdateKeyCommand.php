@@ -40,7 +40,7 @@ class UpdateKeyCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:update:key')
+            ->setName('yaml:update:key')
             ->setDescription($this->trans('commands.yaml.update.key.description'))
             ->addArgument(
                 'yaml-file',

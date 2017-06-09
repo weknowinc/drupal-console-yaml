@@ -41,7 +41,7 @@ class SplitCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:split')
+            ->setName('yaml:split')
             ->setDescription($this->trans('commands.yaml.split.description'))
             ->addArgument(
                 'yaml-file',

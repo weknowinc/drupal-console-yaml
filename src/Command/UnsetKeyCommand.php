@@ -40,7 +40,7 @@ class UnsetKeyCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:unset:key')
+            ->setName('yaml:unset:key')
             ->setDescription($this->trans('commands.yaml.unset.key.description'))
             ->addArgument(
                 'yaml-file',

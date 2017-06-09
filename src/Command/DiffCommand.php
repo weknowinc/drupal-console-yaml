@@ -40,7 +40,7 @@ class DiffCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('console:yaml:diff')
+            ->setName('yaml:diff')
             ->setDescription($this->trans('commands.yaml.diff.description'))
             ->addArgument(
                 'yaml-left',
