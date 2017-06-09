@@ -40,6 +40,6 @@
     "symfony/event-dispatcher": "~2.8"
   },
   "autoload": {
-    "psr-4": {"Drupal\\Console\\Component\\Yaml": "src"}
+    "psr-4": {"Drupal\\Console\\Component\\Yaml\\": "src"}
   }
 }
