@@ -129,7 +129,6 @@ class DiffCommand extends Command
 
         $statistics = ['total' => 0, 'equal'=> 0 , 'diff' => 0];
         $diff = $this->nestedArray->arrayDiff($yamlLeftParsed, $yamlRightParsed, $negate, $statistics);
-        print_r($diff);
 
         if ($stats) {
             $io->info(
