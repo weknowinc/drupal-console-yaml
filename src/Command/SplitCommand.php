@@ -23,7 +23,7 @@ use Drupal\Console\Annotations\DrupalCommand;
  * Class SplitCommand.
  *
  * @DrupalCommand (
- *     extension="console-yaml",
+ *     extension="drupal/console-yaml",
  *     extensionType="library"
  * )
  */

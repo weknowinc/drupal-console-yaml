@@ -21,7 +21,7 @@ use Drupal\Console\Annotations\DrupalCommand;
  * Class MergeCommand.
  *
  * @DrupalCommand (
- *     extension="console-yaml",
+ *     extension="drupal/console-yaml",
  *     extensionType="library"
  * )
  */

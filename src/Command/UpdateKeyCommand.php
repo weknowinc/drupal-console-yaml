@@ -22,7 +22,7 @@ use Drupal\Console\Annotations\DrupalCommand;
  * Class UpdateKeyCommand.
  *
  * @DrupalCommand (
- *     extension="console-yaml",
+ *     extension="drupal/console-yaml",
  *     extensionType="library"
  * )
  */
