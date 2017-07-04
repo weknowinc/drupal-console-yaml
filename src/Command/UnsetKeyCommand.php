@@ -16,7 +16,16 @@ use Symfony\Component\Console\Command\Command;
 use Drupal\Console\Core\Command\Shared\CommandTrait;
 use Drupal\Console\Core\Style\DrupalStyle;
 use Drupal\Console\Core\Utils\NestedArray;
+use Drupal\Console\Annotations\DrupalCommand;
 
+/**
+ * Class UnsetKeyCommand.
+ *
+ * @DrupalCommand (
+ *     extension="console-yaml",
+ *     extensionType="library"
+ * )
+ */
 class UnsetKeyCommand extends Command
 {
     use CommandTrait;
