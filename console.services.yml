@@ -1,35 +1,35 @@
 services:
   console.yaml_diff:
-    class: \Drupal\Console\Component\Yaml\Command\DiffCommand
+    class: \Drupal\Console\Yaml\Command\DiffCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_get_value:
-    class: \Drupal\Console\Component\Yaml\Command\GetValueCommand
+    class: \Drupal\Console\Yaml\Command\GetValueCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_merge:
-    class: \Drupal\Console\Component\Yaml\Command\MergeCommand
+    class: \Drupal\Console\Yaml\Command\MergeCommand
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_split:
-    class: \Drupal\Console\Component\Yaml\Command\SplitCommand
+    class: \Drupal\Console\Yaml\Command\SplitCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_unset_key:
-    class: \Drupal\Console\Component\Yaml\Command\UnsetKeyCommand
+    class: \Drupal\Console\Yaml\Command\UnsetKeyCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_update_key:
-    class: \Drupal\Console\Component\Yaml\Command\UpdateKeyCommand
+    class: \Drupal\Console\Yaml\Command\UpdateKeyCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
   console.yaml_update_value:
-    class: \Drupal\Console\Component\Yaml\Command\UpdateValueCommand
+    class: \Drupal\Console\Yaml\Command\UpdateValueCommand
     arguments: ['@console.nested_array']
     tags:
       - { name: drupal.command, bootstrap: uninstall }
