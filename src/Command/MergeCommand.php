@@ -5,7 +5,7 @@
  * Contains \Drupal\Console\Component\Yaml\Command\MergeCommand.
  */
 
-namespace Drupal\Console\Component\Yaml\Command;
+namespace Drupal\Console\Yaml\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
