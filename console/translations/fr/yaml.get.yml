@@ -1,0 +1,7 @@
+value:
+    description: 'Renvoie une valeur à partir d''une clé spécifique dans un fichier YAML.'
+    arguments:
+        yaml-file: 'Chemin du fichier YAML à mettre à jour'
+        yaml-key: 'Clé YAML pour laquelle obtenir la valeur'
+    messages:
+        invalid-key: 'La clé %s n''a pas pu être trouvée dans %s.'
