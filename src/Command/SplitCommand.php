@@ -13,8 +13,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
-use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Core\Command\Shared\CommandTrait;
+use Drupal\Console\Core\Command\Command;
 use Drupal\Console\Core\Style\DrupalStyle;
 use Drupal\Console\Core\Utils\NestedArray;
 use Drupal\Console\Annotations\DrupalCommand;
@@ -29,8 +28,6 @@ use Drupal\Console\Annotations\DrupalCommand;
  */
 class SplitCommand extends Command
 {
-    use CommandTrait;
-
      /**
       * @var NestedArray
       */
